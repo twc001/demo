@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="utf-8">
+   <title>Map Project</title>
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="css/cssForPatterns.css">
+   		<link rel="icon" type="image/png" href="imgs/flag.png" sizes="32x32">
+   		<link href="https://fonts.googleapis.com/css?family=Ubuntu+Mono" rel="stylesheet">
+   		<link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
+   	
+<style>
+body{
+font-family: 'Varela Round', sans-serif;
+background:#F5F5F5;
+}
+iframe {
+position: absolute;
+    left:19%;
+    top: 1%;
+
+border: 2px solid #d9d9d9;
+border-radius: 1vw;
+}
+
+#content{
+position: absolute;
+    left: 1%;
+    top: 1%;
+width: 17.5%;
+height: 95%;
+background: white;
+border-radius: 1vw;
+border: 2px solid #d9d9d9;
+padding: auto;
+margin: auto;
+}
+
+#board{
+width:100%;
+background: white;
+margin: auto;
+padding: auto;
+text-align: center;
+font-size: 2vmax;
+}
+
+#directions{
+width:100%;
+background: #F0F0F0;
+border-radius: 1vw;
+border: 2px solid black;
+margin: auto;
+padding: auto;
+text-align: center;
+display:none;
+}
+
+#directions:hover,#tour:hover{
+    background-color: #F0F0F0;
+}
+
+#tour{
+width:100%;
+background: #F0F0F0;
+border-radius: 1vw;
+margin: auto;
+padding: auto;
+text-align: center;
+}
+
+#inputs {
+max-height: 90%;
+background: white;
+padding: .75vw;
+margin:.5vw;
+border-radius: 1vw;
+font-size: 2.75vmin;
+text-align: left;
+border: 2px solid #f9f9f9;
+
+}
+
+strong{
+font-size: 2vmax;
+}
+
+input {
+ width:100%;
+   border: none;
+    border-bottom: 1px solid black;
+    background: none;
+    text-align: center;
+}
+
+button{
+width: 90%;
+text-align: center;
+font-size: .66vmax;
+cursor: pointer;
+border-radius: 1vw;
+}
+
+.button {
+  display: inline-block;
+  border-radius: 1vw;
+  background-color:#F0F0F0;
+  border: none;
+  color: #000000;
+  text-align: center;
+  font-size: 1vmax;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+  width: 90%;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.75s;
+}
+
+.button:hover span {
+  padding-right: 20px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+</style>
+<div id=content>
+	<button class=button id= tour style="vertical-align:middle" onclick="window.location.href='http://shire.csci.morningside.edu/~twc001/tourWorking.html'"><span>Tour the Country</span></button>
+	<br><hr>
+	<div id=inputs>
+		<strong>Yerksorc Maps</strong>
+			From:<input id=fromNode></input><br>
+			To:<input id= toNode></input><br>
+			<button class=button id=random1 onclick="random(fromNode, toNode, towns)" style="vertical-align:middle">
+			<span> Random </span></button>
+		<button class=button id="findRoute" style="vertical-align:middle"><span>Find Route</span></button>
+</div>
+<hr><br>
+<div id=board>
+This is a test
+</div>
+</div>
+
+</head>
+
+</html>
